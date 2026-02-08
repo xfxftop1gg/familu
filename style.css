@@ -1,0 +1,837 @@
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Карточка приветствия */
+.welcome-card {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.5s ease;
+}
+
+.welcome-card h1 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 2.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.welcome-card p {
+    color: #7f8c8d;
+    font-size: 1.3em;
+    margin-bottom: 40px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #f8f9fa;
+    padding: 20px 30px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+    color: #34495e;
+    transition: all 0.3s;
+    min-width: 250px;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: #e8f4fd;
+}
+
+.feature i {
+    color: #3498db;
+    font-size: 1.5em;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 18px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 20px 0;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+.btn i {
+    margin-right: 10px;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Инструкции */
+.instructions {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 40px;
+    text-align: left;
+    border-left: 5px solid #3498db;
+}
+
+.instructions h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instructions ol {
+    padding-left: 20px;
+    color: #5a6268;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+/* Страница входа */
+.login-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.login-container .header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #764ba2;
+}
+
+.login-container h2 {
+    color: #2c3e50;
+    margin: 10px 0;
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Форма */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #34495e;
+    font-weight: 600;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1.1em;
+    transition: all 0.3s;
+    background: #f8f9fa;
+}
+
+.form-group input:focus {
+    border-color: #667eea;
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: #ffebee;
+    border-radius: 10px;
+    border-left: 4px solid #e74c3c;
+    display: none;
+}
+
+/* Демо доступы */
+.demo-credentials {
+    background: #e8f5e9;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px 0;
+    border-left: 4px solid #4caf50;
+}
+
+.demo-credentials h4 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.demo-credentials p {
+    color: #388e3c;
+    margin: 5px 0;
+}
+
+/* Ссылки в футере */
+.footer-links {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #eee;
+}
+
+.footer-links .link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.footer-links .link:hover {
+    color: #764ba2;
+}
+
+/* Страница чата */
+.chat-container {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    height: 90vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Шапка чата */
+.chat-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.chat-header h1 {
+    margin: 0;
+    font-size: 1.8em;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.user-name {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+.logout-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Основная область */
+.chat-main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Сайдбар */
+.chat-sidebar {
+    width: 350px;
+    background: #f8f9fa;
+    border-right: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.sidebar-header {
+    padding: 25px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.sidebar-header h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.user-count {
+    color: #667eea;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.contacts-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    background: white;
+}
+
+.contact:hover {
+    background: #eef2ff;
+    transform: translateX(5px);
+    border-color: #667eea;
+}
+
+.contact.active {
+    background: #667eea;
+    color: white;
+    border-color: #764ba2;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.contact-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    margin-right: 18px;
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.contact.active .contact-avatar {
+    background: white;
+    color: #667eea;
+    transform: scale(1.1);
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.contact-info h4 {
+    margin: 0 0 6px 0;
+    font-size: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.online-status {
+    font-size: 0.9em;
+    color: #666;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.online-dot {
+    width: 8px;
+    height: 8px;
+    background: #2ecc71;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.contact.active .online-status {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact.active .online-dot {
+    background: white;
+}
+
+/* Область чата */
+.chat-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+}
+
+.chat-header-bar {
+    padding: 25px 30px;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header-bar h3 {
+    color: #2c3e50;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.chat-status {
+    color: #667eea;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+/* Контейнер сообщений */
+.messages-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fafafa;
+}
+
+.empty-chat {
+    text-align: center;
+    padding: 80px 20px;
+    color: #95a5a6;
+}
+
+.empty-chat i {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #bdc3c7;
+    opacity: 0.7;
+}
+
+.empty-chat p {
+    font-size: 1.2em;
+}
+
+/* Сообщения */
+.message {
+    max-width: 70%;
+    animation: fadeIn 0.3s ease;
+}
+
+.message-sender {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-size: 0.95em;
+    padding-left: 10px;
+}
+
+.message-content {
+    background: white;
+    padding: 16px 22px;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: inline-block;
+    line-height: 1.5;
+    word-break: break-word;
+    position: relative;
+}
+
+.message-content:before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+}
+
+.message-time {
+    font-size: 0.85em;
+    color: #95a5a6;
+    margin-top: 6px;
+    padding-left: 10px;
+}
+
+/* Мои сообщения */
+.message.my-message {
+    margin-left: auto;
+}
+
+.message.my-message .message-sender {
+    color: #667eea;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.message.my-message .message-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.message.my-message .message-content:before {
+    left: auto;
+    right: 20px;
+    border-top-color: #667eea;
+}
+
+.message.my-message .message-time {
+    text-align: right;
+    padding-right: 10px;
+}
+
+/* Форма отправки */
+.message-form {
+    padding: 25px 30px;
+    border-top: 1px solid #eaeaea;
+    display: flex;
+    gap: 15px;
+    background: white;
+}
+
+.message-form input {
+    flex: 1;
+    padding: 18px 25px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    font-size: 1.1em;
+    transition: all 0.3s;
+    background: #f8f9fa;
+}
+
+.message-form input:focus {
+    border-color: #667eea;
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.message-form input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.send-btn {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.send-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Статус подключения */
+.connection-status {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.connection-status.connected {
+    background: rgba(46, 204, 113, 0.9);
+}
+
+.connection-status.disconnected {
+    background: rgba(231, 76, 60, 0.9);
+}
+
+/* Анимации */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Загрузка */
+.loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Прокрутка */
+.messages-container::-webkit-scrollbar,
+.contacts-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages-container::-webkit-scrollbar-track,
+.contacts-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb,
+.contacts-list::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover,
+.contacts-list::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+/* Адаптивность */
+@media (max-width: 1200px) {
+    .chat-sidebar {
+        width: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .chat-main {
+        flex-direction: column;
+    }
+    
+    .chat-sidebar {
+        width: 100%;
+        height: 300px;
+        border-right: none;
+        border-bottom: 1px solid #eaeaea;
+    }
+    
+    .chat-container {
+        height: 95vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .welcome-card,
+    .login-container {
+        padding: 30px 20px;
+    }
+    
+    .welcome-card h1 {
+        font-size: 2em;
+    }
+    
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .chat-header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .user-info {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .message {
+        max-width: 85%;
+    }
+    
+    .chat-header-bar {
+        padding: 15px 20px;
+    }
+    
+    .messages-container {
+        padding: 20px;
+    }
+    
+    .message-form {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-card h1 {
+        font-size: 1.6em;
+    }
+    
+    .feature {
+        min-width: auto;
+        padding: 15px 20px;
+    }
+    
+    .contact {
+        padding: 12px;
+    }
+    
+    .contact-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2em;
+        margin-right: 12px;
+    }
+    
+    .message-content {
+        padding: 12px 16px;
+        font-size: 0.95em;
+    }
+}

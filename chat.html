@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат - Семейный Чат</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💬</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <!-- Шапка -->
+            <div class="chat-header">
+                <h1><i class="fas fa-comments"></i> Семейный Чат</h1>
+                <div class="user-info">
+                    <span class="user-name" id="currentUserName"></span>
+                    <button id="logoutBtn" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Выйти
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Основная область -->
+            <div class="chat-main">
+                <!-- Сайдбар -->
+                <div class="chat-sidebar">
+                    <div class="sidebar-header">
+                        <h3><i class="fas fa-users"></i> Моя семья</h3>
+                        <div class="user-count" id="onlineCount">0 онлайн</div>
+                    </div>
+                    
+                    <div id="contactsList" class="contacts-list">
+                        <!-- Контакты загружаются динамически -->
+                        <div class="loading">Загрузка...</div>
+                    </div>
+                </div>
+                
+                <!-- Чат -->
+                <div class="chat-content">
+                    <div class="chat-header-bar">
+                        <h3 id="chatTitle">Выберите собеседника</h3>
+                        <div class="chat-status" id="chatStatus"></div>
+                    </div>
+                    
+                    <!-- Сообщения -->
+                    <div id="messagesContainer" class="messages-container">
+                        <div class="empty-chat">
+                            <i class="fas fa-comment-alt"></i>
+                            <p>Выберите члена семьи для начала общения</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Форма отправки -->
+                    <form id="messageForm" class="message-form">
+                        <input type="text" id="messageInput" 
+                               placeholder="Напишите сообщение..." 
+                               autocomplete="off"
+                               disabled>
+                        <button type="submit" class="send-btn" disabled>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Индикатор подключения -->
+            <div id="connectionStatus" class="connection-status">
+                <i class="fas fa-wifi"></i> Подключение...
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

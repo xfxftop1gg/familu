@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - Семейный Чат</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="header">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i> На главную
+                </a>
+                <h2><i class="fas fa-sign-in-alt"></i> Вход в семейный чат</h2>
+            </div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username"><i class="fas fa-user"></i> Логин:</label>
+                    <input type="text" id="username" required 
+                           placeholder="Введите ваш логин" 
+                           autocomplete="username">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password"><i class="fas fa-lock"></i> Пароль:</label>
+                    <input type="password" id="password" required 
+                           placeholder="Введите пароль" 
+                           autocomplete="current-password">
+                </div>
+                
+                <div id="errorMessage" class="error-message"></div>
+                
+                <button type="submit" class="btn">
+                    <i class="fas fa-sign-in-alt"></i> Войти
+                </button>
+            </form>
+            
+            <div class="demo-credentials">
+                <h4><i class="fas fa-key"></i> Тестовые доступы:</h4>
+                <p><strong>Логины:</strong> mama, papa, sun, doch</p>
+                <p><strong>Пароль:</strong> 78</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="index.html" class="link">
+                    <i class="fas fa-home"></i> Главная страница
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
